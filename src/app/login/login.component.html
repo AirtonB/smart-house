@@ -1,3 +1,83 @@
-<p>
-  login works!
-</p>
+<div class="logmod">
+  <div class="logmod__wrapper">
+    <span class="logmod__close">Close</span>
+    <div class="logmod__container">
+      <ul class="logmod__tabs">
+        <li data-tabtar="lgm-2">
+          <a href="#">Login</a>
+        </li>
+        <li data-tabtar="lgm-1">
+          <a href="#">Criar Conta</a>
+        </li>
+      </ul>
+      <div class="logmod__tab-wrapper">
+        <div class="logmod__tab lgm-1">
+          <div class="logmod__form">
+            <form (ngSubmit)="cadastrar()" class="simform">
+              <div class="sminputs">
+                <div class="input full">
+                  <label class="string optional" for="user-name">Email *</label>
+                  <input class="string optional" id="user-email" placeholder="Email" type="email" size="50" />
+                </div>
+              </div>
+              <div class="sminputs">
+                <div class="input string optional">
+                  <label class="string optional" for="user-pw">Senha *</label>
+                  <input class="string optional" id="user-pw" placeholder="Senha" type="text" size="50" />
+                </div>
+                <div class="input string optional">
+                  <label class="string optional" for="user-pw-repeat">Senha Novamente *</label>
+                  <input class="string optional" id="user-pw-repeat" placeholder="Senha Novamente" type="text" size="50" />
+                </div>
+              </div>
+              <div class="simform__actions">
+                <input class="sumbit" name="commit" type="sumbit" value="Criar Conta" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="logmod__tab lgm-2">
+          <div class="logmod__form">
+            <form (ngSubmit)="login()" novalidate class="simform">
+              <div class="sminputs">
+                <div class="input full">
+                  <label class="string optional" for="user-name">Email *</label>
+                  <input formControlName="email" class="string optional" id="user-email" placeholder="Email" type="email" size="50" />
+                </div>
+              </div>
+              <div class="sminputs">
+                <div class="input full">
+                  <label class="string optional" for="user-pw">Senha *</label>
+                  <input formControlName="password" class="string optional" id="user-pw" placeholder="Senha" type="password" size="50" />
+                </div>
+              </div>
+              <div class="simform__actions">
+                <input [disabled]="!loginForm.valid" class="sumbit" name="commit" type="sumbit" value="Login" />
+              </div>
+            </form>
+          </div>
+          <div class="logmod__alter">
+            <div class="logmod__alter-container">
+              <a href="#" (click)="authService.facebookLogin()" class="connect facebook">
+                <div class="connect__icon">
+                  <i class="fa fa-facebook"></i>
+                </div>
+                <div class="connect__context">
+                  <span>Fazer login com <strong>Facebook</strong></span>
+                </div>
+              </a>
+              <a href="#" (click)="authService.googleLogin()" class="connect googleplus">
+                <div class="connect__icon">
+                  <i class="fa fa-google-plus"></i>
+                </div>
+                <div class="connect__context">
+                  <span>Fazer login com <strong>Google</strong></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
