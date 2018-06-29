@@ -13,21 +13,21 @@
       <div class="logmod__tab-wrapper">
         <div class="logmod__tab lgm-1">
           <div class="logmod__form">
-            <form (ngSubmit)="cadastrar()" class="simform">
+            <form #formCadastrar="ngModel" (ngSubmit)="cadastrar()" class="simform">
               <div class="sminputs">
                 <div class="input full">
                   <label class="string optional" for="user-name">Email *</label>
-                  <input class="string optional" id="user-email" placeholder="Email" type="email" size="50" />
+                  <input class="string optional" id="user-email" placeholder="Email" type="email" size="10" ngModel required/>
                 </div>
               </div>
               <div class="sminputs">
                 <div class="input string optional">
                   <label class="string optional" for="user-pw">Senha *</label>
-                  <input class="string optional" id="user-pw" placeholder="Senha" type="text" size="50" />
+                  <input class="string optional" id="user-pw" placeholder="Senha" type="text" size="10" ngModel required />
                 </div>
                 <div class="input string optional">
                   <label class="string optional" for="user-pw-repeat">Senha Novamente *</label>
-                  <input class="string optional" id="user-pw-repeat" placeholder="Senha Novamente" type="text" size="50" />
+                  <input class="string optional" id="user-pw-repeat" placeholder="Senha Novamente" type="text" size="10" ngModel required />
                 </div>
               </div>
               <div class="simform__actions">
@@ -38,17 +38,17 @@
         </div>
         <div class="logmod__tab lgm-2">
           <div class="logmod__form">
-            <form (ngSubmit)="login()" novalidate class="simform">
+            <form #formLogin="ngForm" (ngSubmit)="login(formLogin)" novalidate class="simform">
               <div class="sminputs">
                 <div class="input full">
                   <label class="string optional" for="user-name">Email *</label>
-                  <input formControlName="email" class="string optional" id="user-email" placeholder="Email" type="email" size="50" />
+                  <input class="string optional" id="user-email" placeholder="Email" type="email" size="10" ngModel required/>
                 </div>
               </div>
               <div class="sminputs">
                 <div class="input full">
                   <label class="string optional" for="user-pw">Senha *</label>
-                  <input formControlName="password" class="string optional" id="user-pw" placeholder="Senha" type="password" size="50" />
+                  <input class="string optional" id="user-pw" placeholder="Senha" type="password" size="10" ngModel required/>
                 </div>
               </div>
               <div class="simform__actions">

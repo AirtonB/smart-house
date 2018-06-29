@@ -20,14 +20,14 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    FormsModule,
     LoginComponent,
     DashboardComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

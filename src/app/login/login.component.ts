@@ -1,6 +1,6 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -10,16 +10,16 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  login() {
-
+  login(formLogin: NgForm) {
+    console.log(formLogin);
   }
 
-  cadastrar() {
-
+  cadastrar(formCadastrar: NgForm) {
+    
   }
 }
